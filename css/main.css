@@ -2,8 +2,19 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+#page-home {
+    background-image: url(../img/home-background.svg);
+}
+
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+ #page-home .content {
+    margin: 0 auto;
+    width: 90%;
+    width: 1100px;
+}
+
