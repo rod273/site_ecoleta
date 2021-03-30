@@ -1,12 +1,29 @@
+:root {
+    --title-color: #322153;
+}
+
+
 html {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background: #f0f0f5;
+}
+
+a {
+    text-decoration: none;
+}
+
 #page-home {
-    background-image: url(../img/home-background.svg);
+    background: url(../img/home-background.svg) no-repeat;
+    height: 100vh;
+    background-position: 35vw bottom;
+
 }
 
 header {
+    margin-top: 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,3 +35,25 @@ header {
     width: 1100px;
 }
 
+#page-home header a {
+    display: flex;
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+#page-home header a span {
+    margin-right: 16px;
+    background: url(../img/log-in.svg) no-repeat;
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main {
+    max-width: 560px;
+}
+
+#page-home main h1{
+    font-size: 54px;
+    color: var(--title-color);
+}
