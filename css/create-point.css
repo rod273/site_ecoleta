@@ -136,3 +136,8 @@ form .items-grid {
     color: var(--title-color);
     font-weight: bold;
 }
+
+.items-grid li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
