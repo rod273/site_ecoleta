@@ -60,7 +60,7 @@ for (const item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem)
 }
 
-let selectedItems = [1]
+let selectedItems = []
 
 function handleSelectedItem(event) {
     const itemLi = event.target
@@ -74,7 +74,21 @@ function handleSelectedItem(event) {
     //verificar se existem itens selecionados, se sim 
     // pegar os itens selecionados
 
+    const alreadySelected = selectedItems.findIndex( item =>  {
+        const itemFound = item == intemId
+        return itemFound
+    })
+
 
     //se ja estiver selecionado, tirar da seleção
+
+    if(alreadySelected) {
+        
+    }
+
+    //se nao estiver selecionado, adicionar a seleção
+
+
+    //atualizar o campo escondido com os itens selecioandos
    
 }
