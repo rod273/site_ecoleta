@@ -60,14 +60,21 @@ for (const item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem)
 }
 
+let selectedItems = [1]
+
 function handleSelectedItem(event) {
     const itemLi = event.target
 
     //ADICIONAR OU REMOVER UMA CLASSE COM JAVASCRIPT
     itemLi.classList.toggle("selected")
 
-
-
     const intemId = itemLi.dataset.id
+
+
+    //verificar se existem itens selecionados, se sim 
+    // pegar os itens selecionados
+
+
+    //se ja estiver selecionado, tirar da seleção
    
 }
