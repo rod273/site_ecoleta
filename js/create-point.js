@@ -5,9 +5,9 @@ function populateUFs() {
     .then(res => res.json())
     .then(states => {
 
-        for( const state of state ) {
+        for( const states of states ) {
 
-            ufSelect.innerHTML += `<option value="1">Valor</option>`
+            ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
         }
 
         
@@ -15,6 +15,7 @@ function populateUFs() {
 }
 
 
+populateUFs()
 
 
 
@@ -22,16 +23,7 @@ function populateUFs() {
 
 
 
-
-
-
-
-
-
-
-
-
-//document.querySelector("select[name=uf]")
-//.addEventListener("change", () => {
-//    console.log('mudei')
-//} )
+document.querySelector("select[name=uf]")
+.addEventListener("change", () => {
+    console.log('mudei')
+} )
