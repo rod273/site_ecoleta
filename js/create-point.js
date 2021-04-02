@@ -60,6 +60,9 @@ for (const item of itemsToCollect) {
     item.addEventListener("click", handleSelectedItem)
 }
 
+
+ const collectedItems = document.querySelector("input[name=items]")
+
 let selectedItems = []
 
 function handleSelectedItem(event) {
@@ -80,15 +83,21 @@ function handleSelectedItem(event) {
     })
 
 
-    //se ja estiver selecionado, tirar da seleção
-
-    if(alreadySelected) {
-        
+    //se ja estiver selecionado
+    if(alreadySelected >= 0) {
+    
+    //tirar da seleção
+       const filteredItems = selectedItems.filter( item => {
+           const itemIsDifferent = item != intemId
+           return itemIsDifferent
+       })
+       
+       selectedItems = filteredItems
+    } else {
+        //se nao estiver selecionado, adicionar a seleção
+        selectedItems.push(intemId)
     }
 
-    //se nao estiver selecionado, adicionar a seleção
-
-
-    //atualizar o campo escondido com os itens selecioandos
-   
+   //atualizar o campo escondido com os itens selecioandos
+   collectedItems.value = selectedItems
 }
