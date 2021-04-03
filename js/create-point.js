@@ -101,7 +101,3 @@ function handleSelectedItem(event) {
    //atualizar o campo escondido com os itens selecioandos
    collectedItems.value = selectedItems
 }
-
-function openPage(onclick) {
-     document.querySelector("").innerHTML= 'modal'
-}
