@@ -8,6 +8,10 @@ server.use(express.static("public"));
 
 //URILIZANDO TEMPLATE ENGINE
 const nunjucks = require('nunjucks');
+nunjucks.configure("src/views", { 
+    express: server,
+    noCache: true
+} )
 
 
 
@@ -16,12 +20,18 @@ const nunjucks = require('nunjucks');
 //REQ : REQUISIÇÃO
 // RES: RESPOSTA
 server.get("/", (req, res) => {
-   res.sendFile(__dirname + "/views/index.html")
+  return res.render("index.html", { title:"um titulo"})
 });
 
+
 server.get("/create-point", (req, res) => {
-    res.sendFile(__dirname + "/views/create-point.html")
+   return res.render("create-point.html")
  });
+
+
+ server.get("/search", (req, res) => {
+    return res.render("search.html")
+  });
  
 
 //LIGAR O SERVIDOR
