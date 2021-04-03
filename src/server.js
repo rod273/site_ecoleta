@@ -3,7 +3,12 @@ const server = express();
 
 
 //CONFIGURAR PASTA PÚBLIC
-server.use(express.static("public"))
+server.use(express.static("public"));
+
+
+//URILIZANDO TEMPLATE ENGINE
+const nunjucks = require('nunjucks');
+
 
 
 //CONFIGURAR CAMINHOS DA MINHA APLICAÇÃO
@@ -12,12 +17,12 @@ server.use(express.static("public"))
 // RES: RESPOSTA
 server.get("/", (req, res) => {
    res.sendFile(__dirname + "/views/index.html")
-})
+});
 
 server.get("/create-point", (req, res) => {
     res.sendFile(__dirname + "/views/create-point.html")
- })
+ });
  
 
 //LIGAR O SERVIDOR
-server.listen(3000)
+server.listen(3000);
