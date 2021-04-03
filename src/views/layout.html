@@ -22,10 +22,17 @@
 </head>
 <body>
 
-<div id="page-home"><!-- inicio page-home-->
+<div id="{{ pageId }}">
+    {% block content %}
+    {% endblock content %}
+</div>
 
-</div><!--fim page-home-->
+     {% block modal %}
+       
+     {% endblock modal %}
 
+     {% block scripts %}
+     {% endblock scripts %}
 
 </body>
 </html>
