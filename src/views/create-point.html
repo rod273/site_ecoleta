@@ -1,22 +1,21 @@
 {% extends "layout.html"%}}
 
-{% set pageId = "page-home" %}
+{% set pageId = "page-create-point" %}
 
+    {% block title %}
+        <title>Criar um ponto de Coleta</title>
+    {% endblock title %}
 
     {% block styles %}
         <link rel="stylesheet" href="./css/create-point.css">
     {% endblock styles %}}
 
-    <title>Criar um ponto de Coleta</title>
-</head>
-<body>
+    {% block content %}
 
-<div id="page-create-point"><!-- inicio page-create-point -->
+       {% include "partials/page-header.html" %}
+        
 
-    {% include "partials/page-header.html" %}
-
-
-    <form action="">
+                   <form action="">
         <h1>Cadastro do ponto de coleta</h1>
 
         <fieldset>
@@ -100,9 +99,10 @@
         
     </form>
 
-</div><!--fim create-point-->
+    {% endblock content %}
 
-<script src="js/create-point.js"></script>
 
-</body>
-</html>
+
+     {% block scripts %}
+       <script src="js/create-point.js"></script>
+     {% endblock scripts %}
