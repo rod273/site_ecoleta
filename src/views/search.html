@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" 
-    rel="stylesheet">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/search-results.css">
-    <link rel="stylesheet" href="./css/responsive.css">
-    <title>Search of results</title>
-</head>
-<body>
+{% extends "layout.html"%}}
 
-<div id="page-search-results"><!-- inicio page-search-results -->
+   {% set pageId = "page-search-results" %}
 
-    {% include "partials/page-header.html" %}
+
+    {% block title %}
+        <title>Search of results</title>
+    {% endblock title %}}
+
+    {% block styles %}
+       <link rel="stylesheet" href="./css/search-results.css">
+    {% endblock styles %}}
+
+
+    {% block content %}
+
+         {% include "partials/page-header.html" %}
 
     <main>
         <h4> <strong>2 pontos encontrados</strong></h4>
@@ -42,8 +40,4 @@
         </div>
     </main>
 
-
-</div><!--fim page-search-results-->
-
-</body>
-</html>
+    {% endblock content %}
