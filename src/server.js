@@ -1,6 +1,8 @@
 const express = require('express');
 const server = express();
 
+//PEGAR O BANCO DE DADOS
+ const db = require("./database/db.js");
 
 //CONFIGURAR PASTA PÚBLIC
 server.use(express.static("public"));
@@ -21,7 +23,7 @@ nunjucks.configure("src/views", {
 // RES: RESPOSTA
 server.get("/", (req, res) => {
   return res.render("index.html", { title:"um titulo"})
-});
+})
 
 
 server.get("/create-point", (req, res) => {
@@ -30,8 +32,21 @@ server.get("/create-point", (req, res) => {
 
 
  server.get("/search", (req, res) => {
-    return res.render("search.html")
-  });
+
+    // pegar os dados do abnco de dados
+       db.all(` SELECT * FROM places`, function(error, rows) {
+       if(error) {
+           return console.log(error)
+       }
+
+       const total = rows.length
+
+       //mostrar a pagina html com os dados do banco de dados
+        return res.render("search.html", {places: rows , total: total})
+    })  
+
+    
+  })
  
 
 //LIGAR O SERVIDOR
