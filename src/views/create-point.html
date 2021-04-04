@@ -3,8 +3,12 @@ title %}
 <title>Criar um ponto de Coleta</title>
 {% endblock title %} {% block styles %}
 <link rel="stylesheet" href="./css/create-point.css" />
-{% endblock styles %}} {% block content %} {% include
-"partials/page-header.html" %}
+<link rel="stylesheet" href="./css/modal.css" />
+{% endblock styles %}} 
+
+
+{% block content %} 
+{% include "partials/page-header.html" %}
 
 <form action="/savepoint" method="POST">
   <h1>Cadastro do ponto de coleta</h1>
@@ -100,12 +104,16 @@ title %}
   <button type="submit">Cadastrar ponto de coleta</button>
 </form>
 
-{% if saved %}
-{% include "partials/point-created.html" %}
-{% endif %}
+
+{% endblock content %} 
 
 
+     {% block modal %}
+        {% if saved %}
+        {% include "partials/point-created.html" %}
+        {% endif %}
+     {% endblock modal %}
 
-{% endblock content %} {% block scripts %}
+{% block scripts %}
 <script src="js/create-point.js"></script>
 {% endblock scripts %}
