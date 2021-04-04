@@ -63,10 +63,11 @@ db.serialize(() => {
         }
 
 
-        db.run(query, values, afterInsertData)
-
+       // db.run(query, values, afterInsertData)
+        db.all(` SELECT * FROM places`, function(err))
 
     // Consultar os dados da tabela 
+
 
     //Deletar um dado da tabela
 })
