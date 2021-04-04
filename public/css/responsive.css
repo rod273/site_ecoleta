@@ -5,6 +5,10 @@
         background-position: 70vw;
     }
 
+    #page-create-point form button {
+        margin-left: -35px;
+    }
+
     #page-home .content {
         align-items: center;
         text-align: center;
@@ -51,4 +55,16 @@
     #page-home a {
         position: fixed;
     }
+}
+
+@media (min-width: 360px) and (max-width:720px) {
+
+    #page-create-point  .items-grid {
+        grid-template-columns: 1fr;
+    } 
+    
+    #page-create-point form button {
+        margin-left: -35px;
+    }
+
 }
